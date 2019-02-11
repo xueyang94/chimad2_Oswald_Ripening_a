@@ -133,7 +133,7 @@
     f_name = F
     variable = eta1
     mob_name = L
-    args = 'c eta1 eta2 eta3 eta4'
+    args = 'c eta2 eta3 eta4'
   [../]
   [./time_derivative_2]
     type = TimeDerivative
@@ -149,7 +149,7 @@
     f_name = F
     variable = eta2
     mob_name = L
-    args = 'c eta1 eta2 eta3 eta4'
+    args = 'c eta1 eta3 eta4'
   [../]
   [./time_derivative_3]
     type = TimeDerivative
@@ -165,7 +165,7 @@
     f_name = F
     variable = eta3
     mob_name = L
-    args = 'c eta1 eta2 eta3 eta4'
+    args = 'c eta1 eta2 eta4'
   [../]
   [./time_derivative_4]
     type = TimeDerivative
@@ -181,7 +181,7 @@
     f_name = F
     variable = eta4
     mob_name = L
-    args = 'c eta1 eta2 eta3 eta4'
+    args = 'c eta1 eta2 eta3'
   [../]
 []
 
