@@ -23,7 +23,7 @@
   [./w]
     order = FIRST
     family = LAGRANGE
-    scaling = 1e+02
+   #scaling = 1e+02
   [../]
   [./eta1]
     order = FIRST
