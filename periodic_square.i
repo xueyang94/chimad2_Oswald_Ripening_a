@@ -2,8 +2,8 @@
   type = GeneratedMesh
   dim = 2
   elem_type = QUAD4
-  nx = 1
-  ny = 1
+  nx = 3
+  ny = 3
   nz = 0
   xmin = 0
   xmax = 200
@@ -11,7 +11,7 @@
   ymax = 200
   zmin = 0
   zmax = 0
-  uniform_refine = 7
+  uniform_refine = 5
 []
 
 [Variables]
@@ -23,6 +23,7 @@
   [./w]
     order = FIRST
     family = LAGRANGE
+    scaling = 1e+02
   [../]
   [./eta1]
     order = FIRST
@@ -116,6 +117,7 @@
     f_name = F
     kappa_name = kappa_c
     w = w
+    args = 'eta1 eta2 eta3 eta4'
   [../]
   [./time_derivative_1]
     type = TimeDerivative
@@ -131,6 +133,7 @@
     f_name = F
     variable = eta1
     mob_name = L
+    args = 'eta1 eta2 eta3 eta4'
   [../]
   [./time_derivative_2]
     type = TimeDerivative
@@ -146,6 +149,7 @@
     f_name = F
     variable = eta2
     mob_name = L
+    args = 'eta1 eta2 eta3 eta4'
   [../]
   [./time_derivative_3]
     type = TimeDerivative
@@ -161,6 +165,7 @@
     f_name = F
     variable = eta3
     mob_name = L
+    args = 'eta1 eta2 eta3 eta4'
   [../]
   [./time_derivative_4]
     type = TimeDerivative
@@ -176,6 +181,7 @@
     f_name = F
     variable = eta4
     mob_name = L
+    args = 'eta1 eta2 eta3 eta4'
   [../]
 []
 
@@ -278,7 +284,7 @@
   l_tol = 1e-06
   nl_max_its = 50
   nl_abs_tol = 1e-09
-  end_time = 604800
+  end_time = 604800 #7 days 
   petsc_options_iname = '-pc_type -ksp_grmres_restart -sub_ksp_type -sub_pc_type -pc_asm_overlap'
   petsc_options_value = 'asm      31                  preonly       ilu          1'
   [./TimeStepper]
@@ -291,7 +297,7 @@
   [./Adaptivity]
     coarsen_fraction = 0.1
     refine_fraction = 0.7
-    max_h_level = 7
+    max_h_level = 5
   [../]
 []
 
@@ -353,4 +359,3 @@
     interval = 100
   [../]
 []
-
