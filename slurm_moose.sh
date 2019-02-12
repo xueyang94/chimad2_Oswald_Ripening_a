@@ -7,7 +7,7 @@
 #SBATCH --time=8-00:00:00             #Walltime hh:mm:ss
 #SBATCH --output=output-%j.out #Output and error log name
 #SBATCH --mail-type=ALL             #When to email user: NONE,BEGIN,END,FAIL,REQUEUE,ALL
-#SBATCH --mail-user= wuxueyang@ufl.edu       #Email address to send mail to
+#SBATCH --mail-user=wuxueyang@ufl.edu       #Email address to send mail to
 #SBATCH --qos=michael.tonks                #Allocation group name, add -b for burst job
 ##SBATCH --array=1-200%10           #Used to submit multiple jobs with one submit
 
